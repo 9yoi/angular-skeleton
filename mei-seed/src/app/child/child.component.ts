@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -9,19 +10,19 @@ import { Component, OnInit } from '@angular/core';
 export class ChildComponent implements OnInit {
 
   title = 'kid';
-  task: string = 'yo'
+  tasks: string[] = ['taskA', 'taskB', 'taskC']
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  ngOnChanges(changes) {
-    console.log(this.task);
+  onSubmit(form: NgForm){
+    this.tasks.push(form.value.task);
   }
 
-  getTask(task){
-    console.log(task); 
+  hey(){
+    console.log('hey');
   }
 
 }

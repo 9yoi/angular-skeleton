@@ -1,12 +1,16 @@
-<div class="row">
-  <form>
-    <div class="form-group">
+<div>
+  <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+    <div class="form-group row">
       <label for="name">Task Name</label>
-      <input type="text" class="form-control" id="name" required>
+      <input type="text" class="form-control" id="name" name="task" ngModel>
     </div>
-
-    <button type="submit" class="btn btn-success">Add Task</button>
-
+    <div class="row">
+      <button type="submit" class="btn btn-success" (click)="hey()">Add Task</button>
+    </div>
   </form>
+
+  <ul *ngFor="let task of tasks">
+    <li>{{task}}</li>
+  </ul>
 </div>
 
