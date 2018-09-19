@@ -25,7 +25,13 @@ export class AppComponent  {
   }
 
   moveTask(event) {
-    console.log(event, 'in parent')
+    const newColumn = event.toCol;
+    const oldColumn = event.fromCol;
+    const oldIndex = event.originalTaskIndex;
+    
+    removeFromBoard(oldColumn, oldIndex);
+    addToBoard(newColumn, task)
+
   }
 
 

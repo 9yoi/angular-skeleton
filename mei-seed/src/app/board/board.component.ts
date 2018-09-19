@@ -24,13 +24,12 @@ export class BoardComponent implements OnInit {
     console.log(this.id)
   }
 
-  moveLeft(currIndex, task) {
-    const newIndex = currIndex - 1;
-    this.moveTask.emit({task: task, index: newIndex})
+
+  moveLeft(boardIndex, taskIndex) {
+    this.moveTask.emit({toCol: boardIndex - 1, fromCol: boardIndex, originalTaskIndex: taskIndex})
   }
-  
-  moveRight(currIndex, task) {
-    const newIndex = currIndex + 1;
-    this.moveTask.emit({ task: task, index: newIndex })
+
+  moveRight(boardIndex, taskIndex) {
+    this.moveTask.emit({ toCol: boardIndex + 1, fromCol: boardIndex, originalTaskIndex: taskIndex })
   }
 }
