@@ -1,0 +1,11 @@
+<div class="board"> 
+  <div class="header">
+    <h2>{{header}}</h2>
+  </div>
+  <div *ngFor="let task of tasks" class="row">
+    <button *ngIf="id > 0" (click)="moveLeft(id, task)"> < </button>
+    <div>{{task}}</div>
+    <button *ngIf="id < 3" (click)="moveRight(id, task)"> > </button>
+  </div>
+
+</div>
