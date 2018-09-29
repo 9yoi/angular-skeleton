@@ -1,14 +1,8 @@
 <div class="container">
   <div class="row">
-    <div *ngFor="let board of boards; index as i" class="col-md-3">
-      <app-board 
-        [tasks]="board.tasks" 
-        [header]="board.header" 
-        [id]="board.id"
-        (moveTask)="moveTask($event)"
-        ></app-board>
-      <button (click)="openDialog(i)"> Add a card </button>
-    </div>
+    <app-board
+      [kids]="kids"
+    ></app-board>
   </div>
 </div>
 

@@ -7,13 +7,9 @@ import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 })
 export class BoardComponent implements OnInit {
   @Input()
-  tasks: string[];
-  @Input()
-  header: string;
-  @Input()
-  id: number;
+  kids: string[]
 
-  @Output() moveTask: EventEmitter<any> = new EventEmitter();
+  //@Output() moveTask: EventEmitter<any> = new EventEmitter();
 
   constructor() {
     // this.tasks = ["TaskA", "TaskB"];
@@ -21,15 +17,11 @@ export class BoardComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.id)
   }
 
 
-  moveLeft(boardIndex, taskIndex) {
-    this.moveTask.emit({toCol: boardIndex - 1, fromCol: boardIndex, originalTaskIndex: taskIndex})
-  }
+  // moveLeft(boardIndex, taskIndex) {
+  //   this.moveTask.emit({toCol: boardIndex - 1, fromCol: boardIndex, originalTaskIndex: taskIndex})
+  // }
 
-  moveRight(boardIndex, taskIndex) {
-    this.moveTask.emit({ toCol: boardIndex + 1, fromCol: boardIndex, originalTaskIndex: taskIndex })
-  }
 }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { BoardComponent } from './board/board.component';
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { BoardComponent } from './board/board.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule ,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
